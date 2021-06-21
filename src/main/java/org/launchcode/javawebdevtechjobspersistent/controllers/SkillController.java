@@ -18,11 +18,10 @@ public class SkillController {
     @Autowired
     private SkillRepository skillRepository;
 
-    @GetMapping
-    public String displayAllEvents(Model model) {
-        model.addAttribute("title", "All Skills");
+    @GetMapping("")
+    public String index(Model model) {
         model.addAttribute("skills", skillRepository.findAll());
-        return "skills";
+        return "skills/index";
     }
 
     @GetMapping("add")
