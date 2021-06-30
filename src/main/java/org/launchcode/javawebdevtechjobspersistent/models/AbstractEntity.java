@@ -14,14 +14,15 @@ public abstract class AbstractEntity {
     @GeneratedValue
     private int id;
 
+    @NotBlank(message = "Name is required")
+    @Size(min = 3, max = 75, message = "Name must be between 3 and 75 characters")
     private String name;
 
     public int getId() {
         return id;
     }
 
-    @NotBlank(message = "Name is required")
-    @Size(min = 3, max = 75, message = "Name must be between 3 and 75 characters")
+
     public String getName() {
         return name;
     }

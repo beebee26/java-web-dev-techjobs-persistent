@@ -17,6 +17,7 @@ public class Job extends AbstractEntity{
     private Employer employer;
 
     @ManyToMany
+    @Size(min=1, max=10, message="You must choose at least one skill or add a new skill. You may add a maximum of 10 skills.")
     private List<Skill> skills = new ArrayList<Skill>();
 
     public Job() {
