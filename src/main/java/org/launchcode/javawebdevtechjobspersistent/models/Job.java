@@ -16,6 +16,7 @@ public class Job extends AbstractEntity{
     @ManyToOne
     private Employer employer;
 
+    //@Size added - user must check at least one skill checkbox on add job form.
     @ManyToMany
     @Size(min=1, max=10, message="You must choose at least one skill or add a new skill. You may add a maximum of 10 skills.")
     private List<Skill> skills = new ArrayList<Skill>();
